@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.huangfugui.ibatis.mapper.LabelRecordMapper">
+    <insert id="insertRecord">
+        INSERT INTO t_label_record(
+          user_id,
+          pic_id,
+          label_id,
+          count
+        )
+        VALUES(
+          #{userId},
+          #{picId},
+          #{labelId},
+          #{count}
+        )
+    </insert>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.huangfugui.ibatis.mapper.PictureMapper">
+    <insert id="insertPic" useGeneratedKeys="true" keyProperty="id" parameterType="org.huangfugui.ibatis.po.Picture">
+        INSERT INTO
+          t_pic(path,m_count)
+        VALUES
+          (#{path},#{mCount})
+    </insert>
+
+    <select id="selectById" resultType="picture">
+        SELECT * FROM t_pic WHERE id=#{picId}
+    </select>
+</mapper>

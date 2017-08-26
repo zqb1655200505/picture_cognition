@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="org.huangfugui.ibatis.po.User" alias="user"></typeAlias>
+        <typeAlias type="org.huangfugui.ibatis.po.PicLabel" alias="picLabel"></typeAlias>
+        <typeAlias type="org.huangfugui.ibatis.po.Picture" alias="picture"></typeAlias>
+        <typeAlias type="org.huangfugui.ibatis.po.Label" alias="label"></typeAlias>
+        <typeAlias type="org.huangfugui.ibatis.po.LabelInput" alias="labelInput"></typeAlias>
+    </typeAliases>
+
+    <typeHandlers>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.huangfugui.ibatis.enums.Sex"></typeHandler>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="org.huangfugui.ibatis.enums.UserType"></typeHandler>
+    </typeHandlers>
+
+    <!--
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/picture_cognition?useUnicode=true&amp;characterEncoding=utf8"/>
+                <property name="username" value="root"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    -->
+
+    <mappers>
+        <mapper resource="UserMapper.xml"></mapper>
+        <mapper resource="LabelMapper.xml"></mapper>
+        <mapper resource="PictureMapper.xml"></mapper>
+        <mapper resource="PicLabelMapper.xml"></mapper>
+        <mapper resource="LabelRecordMapper.xml"></mapper>
+        <mapper resource="LabelInputMapper.xml"></mapper>
+    </mappers>
+
+</configuration>

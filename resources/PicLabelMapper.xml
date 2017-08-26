@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.huangfugui.ibatis.mapper.PicLabelMapper">
+    <resultMap id="picLabelMap" type="picLabel">
+        <association property="picture" column="pic_id" select="org.huangfugui.ibatis.mapper.PictureMapper.selectById"/>
+        <association property="label" column="label_id" select="org.huangfugui.ibatis.mapper.LabelMapper.selectById"/>
+    </resultMap>
+
+    <insert id="insertPicLabel" useGeneratedKeys="true" keyProperty="id" parameterType="org.huangfugui.ibatis.po.PicLabel">
+        INSERT INTO
+          t_pic_label(pic_id,label_id,score,m_count)
+        VALUES
+          (#{picture.id},#{label.id},#{score},#{mCount})
+    </insert>
+
+    <select id="selectById" resultMap="picLabelMap">
+        SELECT * FROM t_pic_label WHERE id=#{picLabelId}
+    </select>
+
+    <select id="getLabelByPicId" resultMap="picLabelMap">
+         SELECT * FROM t_pic_label WHERE pic_id=#{picId} AND m_count=#{mCount}
+    </select>
+
+    <select id="getAllLabelPic" resultMap="picLabelMap">
+        SELECT * FROM t_pic_label WHERE m_count=#{mCount}
+    </select>
+
+    <update id="updateForTagNoInput">
+        UPDATE
+          t_pic_label
+        SET
+          score = score + #{addScore}
+        WHERE
+          pic_id = #{picId} AND label_id = #{labelId}
+    </update>
+</mapper>

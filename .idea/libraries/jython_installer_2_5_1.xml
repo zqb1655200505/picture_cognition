@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="jython_installer-2.5.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/Doc/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/Demo/embed" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/Demo/javaclasses" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/Demo/jreload/src" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/src" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jython_installer-2.5.1.jar!/tests/java" />
+    </SOURCES>
+  </library>
+</component>
